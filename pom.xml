@@ -8,13 +8,17 @@
     <description>Java class library for obtaining geolocation information of an IP address.</description>
     <developers>
         <developer>
-            <id>jeszy</id>
-            <name>Péter Jeszenszky</name>
-            <email>jeszenszky.peter@inf.unideb.hu</email>
-            <organization>Faculty of Informatics, University of Debrecen</organization>
-            <organizationUrl>http://www.inf.unideb.hu/</organizationUrl>
+            <id>BerciBAA</id>
+            <name>Borz Albert Ádám</name>
+            <email>bercike222@gmail.com</email>
         </developer>
     </developers>
+    <distributionManagement>
+        <site>
+            <id>shrek</id>
+            <url>scp://@shrek.unideb.hu:2222/home/borzalbertadam/public_html/${project.artifactId}</url>
+        </site>
+    </distributionManagement>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.outputEncoding>UTF-8</project.build.outputEncoding>
@@ -47,6 +51,18 @@
     </dependencies>
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.11.0</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.wagon</groupId>
+                        <artifactId>wagon-ssh</artifactId>
+                        <version>3.5.1</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
